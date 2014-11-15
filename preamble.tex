@@ -1,0 +1,66 @@
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{paralist} 
+\pagestyle{fancy}
+
+% Bibliograhy
+\usepackage{natbib}
+\immediate\write18{bibtex \jobname}
+
+% doing tables using \midrule \toprule 
+\usepackage{booktabs}
+
+% comment commenting entire blocks
+\usepackage{comment}
+
+% math cases with labels
+\usepackage{cases}
+
+\usepackage{amssymb}
+% math symbols
+\usepackage{graphicx}
+
+%packages needed
+\usepackage{dsfont}
+
+%my commands bold matrix, breakets, transpose, inverse
+\newcommand{\ma}[1]{{\mathbf #1}}
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\trans}{^\intercal}
+\newcommand{\inv}{^{-1}}
+\newcommand{\linlim}[2] {\mathop{\big|}\limits_#1^#2}
+
+% operator domain
+\DeclareMathOperator{\dom}{dom}
+
+
+
+% adjusted norm
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% functions in text
+\newcommand{\func}[1]{\textsf{#1}}
+
+% einruecken verhindern
+\setlength{\parindent}{0pt}
+
+% statistic symbols expected value variance and covariance
+\newcommand{\E}[1]{\mathrm{E}\left(#1\right)}
+\newcommand{\Var}[1]{\mathrm{Var}\left(#1\right)}
+\newcommand{\Cov}[1]{\mathrm{Cov}\left(#1\right)}
+
+%indicator function with first boarder a than b and than x
+\newcommand{\Indicator}[3]{\mathds{1}_{\lbrack #1,#2 \rbrack} \lb #3 \rb }
+
+%argmin
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+% must be equal symbol
+\newcommand{\mbeq}{\overset{!}{=}}
+
+%column vector
+\newcommand*{\colvec}[3][]{
+            \begin{pmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{pmatrix}
+	}

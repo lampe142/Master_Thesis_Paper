@@ -1,0 +1,51 @@
+\documentclass[document.tex]{subfiles}
+\begin{document}
+\section*{Notes:}
+\subsection{ the empirical problem/question posed  }
+\begin{itemize}
+\item how good are the benefits and the cost of debt financing in explaining the debt ratio.
+\item how good are the benefits and the cost of debt financing in explaining the debt ratio converting to the target debt ration.
+\end{itemize}
+\subsection{ the model(s) under consideration/ the relations between the variables suggested by economic theory  }
+\begin{itemize}
+\item the target debt ratio $MDR^*_{it}$ can be modeled by $MDR^*_{it} = x`_{it} \beta + \eta_{it}$ 
+\item with $x'_it$ consisting out of the following variables
+\item $ebit_{it}$  earnings before intererst payments and texes, divided by total assets, 
+\item	$mb$ ratio of market value to book value of assets 
+ \item $deo_ta$ deoreciation expenses as a proportion of fixed assets 
+\item $\log (ta) $ log of total assets 
+\item $fa_ta$ proportion of fixed assets
+\item $rd_ta$ research and development expenditures, divided by total assets (0 if missing)
+\item $rd_dum$ dummy indicating whether $rd_ta$ is missing
+\item $indmedian$ industry median debt ratio
+\item $rated$ dummy indicating whether the firm ha a prublic debt rating
+\end{itemize}
+\subsection{ the formal model }
+\begin{itemize}
+\item partial-adjustment model
+\item Costs that arise from adapting the debt ration $MDR_{it}$ to the target debt ratio $MDR*_{it}$ 
+cause a slower adjustment, with the adjustment speed coefficient $\gamma$
+\item the real adjustments of the firms debt ration are therefore just $\lb 1 - \gamma \rb $ times the adjustment that would be perfect 
+without adjustment costs
+\item $MDR_{it} - MDR_{i,t-1} = (1-\gamma) \lb MDR^*_{it} - MDR_{i,t-1} \rb$
+\end{itemize}
+\subsection{ the data (source, coverage, proxies for the variables in the theoretical model)  }
+\begin{itemize}
+\item sample of fitms Compustat Industrial Annual Tapes, time years 1987 to 2001 exclude financial firms with special factors
+\item final sample subsample N = 3777 firms, 19573 firm year observations
+\item industry median proxy for industry characteristics that are not captured by the other explanatory variables
+\end{itemize}
+\subsection{ the estimation method(s), empirical specification of the model, comparison of models  }
+\begin{itemize}
+\item OLS 
+\item within estimator
+\item first difference estimator
+\item Anderson-Hsiao instrumental variable estimator
+\item Arellano-Bond GMM estimator
+\end{itemize}
+\subsection{ results/conclusions  }
+\begin{itemize}
+\item This slow adjustment is consistent with the hypothesis that other considerations outweigh the cost of deviation from optimal leverage.
+\item none of the reported estimates for the dynamic model to explain firms debt ratios is entirely convincing
+\end{itemize}
+\end{document}
