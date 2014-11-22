@@ -7,59 +7,6 @@ instrumental variable and Arellano Bond GMM estimators. \\
 The theoretical model underlying this analysis is a partial-adjustment model. For the empirical analysis a dynamic panel data model is estimated using the different estimators mentioned earlier and the results provided by the different methods are compared.\\
 The research question raised by Verbeek is: ''Is it possible to properly investigate the 
 deviations and the adjustment speed of the debt ratio $MDR_{it}$ and the target debt ratio $MDR^*_{it}$ using firm characteristics as proxies for the potential costs and benefits of a firms debt structure.'' This question continues a broadly discussed topic, the optimal capital structure (equity vs debt) of the firm. First work was done by famous Modigliani and Miller in 1958 where they showed that in friction less markets the capital structure is irrelevant. In the real world however, we have to take frictions into account. Especially if we are doing an empirical investigation.
-\\
-The research of Verbeek is following Flannery and Ragan (2006) who investigated the explanatory power of partial adjusting towards the firms optimal capital structure. This is an important aspect, because instant capital adjustments are only plausible in a friction less world. Therefore the adjustment speed is estimated and analysed, which will lead to the usage of dynamic panel models.\\
-Now we will shortly introduce the basic model. The debt ratio is defined as the ratio of the book value of the firms interest-bearing debt $D_{it}$
-and the sum of debt and the market equity $S_{it}P_{it}$
-\begin{equation}
-MDR_{it}=\frac{D_{it}}{D_{it}+ S_{it}P_{it}}. 
-\end{equation}
-Key assumptions are that every firm has an individual targeted debt ratio which fluctuates over times and is related to the pros and cons of various leverage ratios. The target debt ratio should be determined by characteristics of the firm and time and therefore should be estimatable by:
-\begin{equation}
-MDR^*_{it} = x'_{it} \beta + \eta_{it}.
-\end{equation}
-The characteristics of the firms form the regressor $x'_{it}$, part of these factors are for example 
-the proportion of fixed assets and the ratio of the market value to book value of assets.  
-To incorporate industry specific characteristics that are not captured by the other explanatory variables, an industry median proxy is included.\\
-But since we are expecting a partial adjustment, the model needs to be adjusted to count for these effects. The speed with which a firm adjusts towards it debt ratio is determined by the coefficient $\gamma$ and is fix for all firms and over time. The coefficient $\gamma$ is bounded between 0 and 1 where 0 would indicate direct adjustment. The partial-adjustment model is specified by the following:
-\begin{equation}
-MDR_{it} - MDR_{i,t-1} = (1-\gamma) \lb MDR^*_{it} - MDR_{i,t-1} \rb \label{adjustment}. 
-\end{equation}
-By inserting the model for the targeted debt ration in equation \eqref{adjustment} and transforming it we get
-\begin{equation}
-MDR_{it}= \gamma MDR_{i,t-1} + x'_{it} \beta* + \alpha_i + u_{it}. \label{estimated}
-\end{equation}
-Equation \eqref{estimated} can be used to estimated the coefficients especially the adjustment speed coefficient $\gamma$.
-The data used for the estimation is a sample of the Compustat Industrial Annual Tapes excluding financial firms and in general firms which are working in regulated industries and are not free to choose their debt. The time frame is from 1987 to 2001, the sample size is is 3777 firms and 19573 firm year observations. We have an unbalanced panel with an average observation time of 5.2 years. 
-
-\newpage
-
-Our available possible covariates to model the target debt ratio are:
-\\
-\begin{compactenum}
-\item $ebit_{it}$  earnings before interest payments and taxes, divided by total assets, 
-\item  $mb$ ratio of market to book value of assets 
-\item $dep_{ta}$ depreciation expenses as a proportion of fixed assets 
-\item $\log (ta) $ log of total assets 
-\item $fa_{ta}$ proportion of fixed assets
-\item $rd_{ta}$ research and development expenditures, divided by total assets (0 if missing)
-\item $indmedian$ industry median debt ratio
-\item $rated$ dummy indicating whether the firm has a public debt rating
-\end{compactenum}
-
-And in line with Flannery et al a dummy variable ($rd_{dum}$) for missing information about research expanditures is included.\\
-In order to estimate the dynamic random effects model five different estimators are used in total. 
-In a first step the following three estimators, known to be inconsistent for fixed $T$ and $N \rightarrow \infty$
-are used: the OLS, fixed effect within estimator and fixed effect first differences estimator, all of them with robust standard errors. The difference in results provided by these inconsistent estimators is unsurprisingly pretty large, which is probably due to being biased in different directions.
-The OLS estimator is insignificant, whereas the within and first difference estimator have significant estimates.
-Some results do not make sense at all, for example a negative estimate of the first difference estimator. Also we have endogeneity between our fixed effect and our covariates which should already rule out the OLS and first difference estimators.
-It is noteworthy that the within estimator resulted in the most reasonable and believable estimate for the adjustment speed, indicating that firm-specific effects should be controlled for. \\  
-To overcome this shortcommings, in the next step the Arellano-Bond and Anderson-Hsiao estimators are used. They allow for consistent estimation as $N \rightarrow \infty$.
-The Anderson-Hsiao method is using one period lagged differences as well as level as instruments, this results in rather unsatisfying and unrealistic results, probably owing to the weak instruments problem for the former and violation of the exogeneity assumption in the latter case. The Arellano-Bond method does a little better. It uses further lags of MDR as instuments  for lagged MDR. Although it provides some reasonable results, others remain nonsense. Two main reasons are suggested for causing this. First of all the method is operated under the assumption of homoscedasticy, which is not a given and secondly for the used instruments to be valid, which requires no serial correlation of the error term $u_{it}$, which is not the case.\\
-In conclusion none of the five different suggested estimators led to acceptable,consistent and economically plausible results. But we can conclude that the real value for $\gamma$ should be according to OLS between 0.535 to 0.884 and according to GMM 0.75.\\
-A general conclusion of this analysis is that the first three estimators () are not suitable for producing consistent and unbiased estimates for this model. In contrast at least in theory, with all necessary assumotions satisfied, the Arellano-Bond and Anderson-Hsiao estimators should be consistent as well as unbiased. However the error terms in this case are serially correlated and thus the instruments used are not valid. In addition one can not exclude the possibility that the assumption of homoscedasticity might be violated.
-Finally a possible explanation for the poor results obtained over the course of this model building exercise  might be that the overall construction of the model is not correct, 
-meaning that the adjustment speed of companies debt ratios cannot be properly explained by this pretty simple model and the currently used explanatory variables.  The theory of perfect debt-structure implies that the optimal debt ratio should be influenced by taxes as well as bankruptcy costs, which are not accounted for in the explanatory variables used in this model. Therefore one might suspect that all our regressions suffer from the omitteb variable bias problem.
 
 \end{document}
 
